@@ -3,13 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Articles from "./xyz/com/Articles"
+// import Articles from "./xyz/com/Articles"
+// import Formik2 from "./form/Formik"
+// import Counter from './counter/Counter';
+// import Ex1 from './pagination/Ex1';
+// import P1 from './pagination/P1';
+// import ComponentPaginate from './pagination/ComponentPaginate';
+// import Remove_item from './remove-item/remove-item';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Articles/>
-
+    {/* <Articles/> */}
+{/* <Formik2 /> */}
+{/* <Counter /> */}
+{/* <Ex1 /> */}
+{/* <P1/> */}
+{/* <Remove_item></Remove_item> */}
+{/* <ComponentPaginate /> */}
   </React.StrictMode>
 );
 
