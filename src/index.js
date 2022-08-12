@@ -11,7 +11,8 @@ import reportWebVitals from './reportWebVitals';
 // import ComponentPaginate from './pagination/ComponentPaginate';
 // import Remove_item from './remove-item/remove-item';
 // import TableData from "./form/tableform"
-import App2 from './form-crud/App';
+// import App2 from './form-crud/App';
+import YupForm from './Yup-Form/YupForm';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,7 +26,8 @@ root.render(
 {/* <Remove_item></Remove_item> */}
 {/* <ComponentPaginate /> */}
 {/* <TableData /> */}
-<App2/>
+{/* <App2/> */}
+<YupForm />
   </React.StrictMode>
 );
 
