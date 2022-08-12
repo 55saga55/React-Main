@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+// import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import Articles from "./xyz/com/Articles"
@@ -10,6 +10,8 @@ import reportWebVitals from './reportWebVitals';
 // import P1 from './pagination/P1';
 // import ComponentPaginate from './pagination/ComponentPaginate';
 // import Remove_item from './remove-item/remove-item';
+// import TableData from "./form/tableform"
+import App2 from './form-crud/App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +24,8 @@ root.render(
 {/* <P1/> */}
 {/* <Remove_item></Remove_item> */}
 {/* <ComponentPaginate /> */}
+{/* <TableData /> */}
+<App2/>
   </React.StrictMode>
 );
 

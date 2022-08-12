@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
   
 function StudentForm(props) {
-  const [name, setName] = useState('');
-  const [city, setCity] = useState('');
+  const [name, setFirstName] = useState('');
+  const [name2, setLastName] = useState('');
 
   
   
   const changeFirstName = (event) => {
-    setName(event.target.value);
+    setFirstName(event.target.value);
   };
   
   const changeLastName = (event) => {
-    setCity(event.target.value);
+    setLastName(event.target.value);
   };
   
   const transferValue = (event) => {
     event.preventDefault();
     const val = {
       name,
-      city,
+      name2,
     };
     props.func(val);
     
@@ -26,8 +26,8 @@ function StudentForm(props) {
   };
   
   const clearState = () => {
-    setName('');
-    setCity('');
+    setFirstName('');
+    setLastName('');
   };
   
   return (
@@ -39,7 +39,7 @@ function StudentForm(props) {
       </div>
       <div className="form-group col-md-6">
       <label>LastName: </label>
-      <input type="text" value={city} onChange={changeLastName} />
+      <input type="text" value={name2} onChange={changeLastName} />
       
       </div>
       <button  className="btn btn-primary ml-3" onClick={transferValue}>ADD</button>
