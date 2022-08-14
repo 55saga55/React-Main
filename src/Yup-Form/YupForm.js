@@ -1,14 +1,18 @@
 import React from 'react'
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
+import DatePicker from "react-datepicker";
+// import DateView from "react-datepicker;"
+// import { FormGroup} from "formik";
 
 export default function YupForm() {
- let git = 
- /^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_]{1,25}$/igm ;
+
+  let git =
+    /^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_]{1,25}$/igm;
   //  let  li = 
   // /(https?)?:?(\/\/)?(([w]{3}||\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-  
- 
+
+
   const singnUpSchema = Yup.object().shape({
 
     fullName: Yup.string().min(2, "To short fullName").max(40, "To long fullName").required("Required*"),
@@ -28,12 +32,21 @@ export default function YupForm() {
 
     age: Yup.number().min(18, "You must be at least 18 years").max(58, "You must be at least 58 years").required("Required*"),
 
-    devProfile: Yup.string().matches(git,"This is not valid Github URL"),
+    devProfile: Yup.string().matches(git, "This is not valid Github URL").required(),
 
-    hobbies: Yup.array().min(2,"min 2 hobbies you can select").max(4,"max 4 hobbies you can select"),
- 
-      })
+    hobbies: Yup.array().min(2, "min 2 hobbies required").max(4, "max 4 hobbies you can select"),
 
+    country: Yup.string().required("country must be selected"),
+    dob: Yup.string().required()
+  })
+  const countryArr = [
+    { value: "india", label: "India" },
+    { value: "usa", label: "USA" },
+    { value: "canada", label: "Canada" },
+    { value: "germany", label: "Germany" },
+    { value: "uk", label: "UK" },
+    { value: "france", label: "France" }
+  ];
 
   return (
 
@@ -48,7 +61,8 @@ export default function YupForm() {
             age: "",
             devProfile: "",
             hobbies: [],
-            country:[],
+            country: "",
+            dob: ""
 
           }
         }
@@ -57,6 +71,9 @@ export default function YupForm() {
           console.log(val)
         }}
       >
+
+
+
         {({ errors, touched }) => (
           <Form>
             <div>
@@ -103,50 +120,78 @@ export default function YupForm() {
               ) : null}
             </div>
             <div id="checkbox-group">Hobbies:</div>
-          <div role="group" aria-labelledby="checkbox-group">
-            <label>
-              <Field type="checkbox" name="hobbies" value="traveling" />
-              Traveling
-            </label>
-            <label>
-              <Field type="checkbox" name="hobbies" value="singing" />
-              singing
-            </label>
-            <label>
-              <Field type="checkbox" name="hobbies" value="cooking" />
-              cooking
-            </label>
-            <label>
-              <Field type="checkbox" name="hobbies" value="reading" />
-              reading
-            </label>
-            <label>
-              <Field type="checkbox" name="hobbies" value="photography" />
-              photography
-            </label>
-            <label>
-              <Field type="checkbox" name="hobbies" value="music" />
+            <div role="group" aria-labelledby="checkbox-group">
+              <label>
+                <Field type="checkbox" name="hobbies" value="traveling" />
+                Traveling
+              </label>
+              <label>
+                <Field type="checkbox" name="hobbies" value="singing" />
+                singing
+              </label>
+              <label>
+                <Field type="checkbox" name="hobbies" value="cooking" />
+                cooking
+              </label>
+              <label>
+                <Field type="checkbox" name="hobbies" value="reading" />
+                reading
+              </label>
+              <label>
+                <Field type="checkbox" name="hobbies" value="photography" />
+                photography
+              </label>
+              <label>
+                <Field type="checkbox" name="hobbies" value="music" />
                 music
-            </label>
+              </label>
 
-            {errors.hobbies && touched.hobbies? (
+              {errors.hobbies && touched.hobbies ? (
                 <div>{errors.hobbies}</div>
               ) : null}
-          </div>
+            </div>
 
-          <div>
-          <Field as="select" name="country">
-             <option value="India">India</option>
-             <option value="USA">USA</option>
-             <option value="Canada">Canada</option>
-             <option value="UK">UK</option>
-             <option value="Australia">Australia</option>
-           </Field>
-           {errors.country && touched.country? (
+
+            <div>
+              <Field as="select" name="country" id="country">
+                <option value="" label="">
+                  Select Your Country{" "}
+                </option>
+                {countryArr.map((item, index) =>
+                  <option key={index} value={item.value} label={item.label}>{item.value}</option>
+                )}
+              </Field>
+              {errors.country && touched.country ? (
                 <div>{errors.country}</div>
               ) : null}
-          </div>
+            </div>
+
+            <div>
+              <label htmlFor="DOB">Date Of Birth:</label>
+              <Field type="date" name="dob"  />
+
+              {errors.dob && touched.dob ? (
+                <div>{errors.dob}</div>
+              ) : null}
+            </div>
             
+            {/* <label htmlFor="" >
+            <DatePicker style={{ width: 180 }}
+                                        // date={values.dueDate}
+                                        mode="date"
+                                        format="YYYY-MM-DD"
+                                        // minDate={Date.now.toString()}
+                                        maxDate="2050-06-01"
+                                        confirmBtnText="Confirm"
+                                        cancelBtnText="Cancel"
+                                        showIcon={false} />
+
+            </label> */}
+           
+          
+         
+       
+
             <button type='submit'>submit</button>
           </Form>
         )}
