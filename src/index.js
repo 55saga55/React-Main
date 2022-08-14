@@ -12,7 +12,8 @@ import reportWebVitals from './reportWebVitals';
 // import Remove_item from './remove-item/remove-item';
 // import TableData from "./form/tableform"
 // import App2 from './form-crud/App';
-import YupForm from './Yup-Form/YupForm';
+// import YupForm from './Yup-Form/YupForm';
+import FileUpload from './form/FileUpload';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,7 +28,8 @@ root.render(
 {/* <ComponentPaginate /> */}
 {/* <TableData /> */}
 {/* <App2/> */}
-<YupForm />
+{/* <YupForm /> */}
+<FileUpload />
   </React.StrictMode>
 );
 
