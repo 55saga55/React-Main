@@ -1,4 +1,4 @@
-import { Field, FieldArray, Form, Formik } from 'formik'
+import { Field, FieldArray, Form, Formik} from 'formik'
 import React ,{useState} from 'react'
 // import AddMoreField from './AddMoreField'
 
@@ -17,7 +17,14 @@ export default function Dynamic2() {
         .max(50, 'Too Long!')
         .required('Required'),
       email: Yup.string().email('Invalid email').required('Required'),
+      addField: Yup.array().of(Yup.string().required("required")),
 
+      // education: Yup.array(Yup.object(({
+      //     qualification: Yup.string().required('Required'),                              
+      //     grade: Yup.string().required('Required') 
+      //   })
+      // ))
+   
     })
     const priamaryValues = 
         {
@@ -33,22 +40,7 @@ export default function Dynamic2() {
 
         }
     
-//    function onChangeField(e,field,values,setValues){
-//             const addField = [...values.addField];
-//             setValues(...values,addField);
-//             field.onChange(e);
-//    }
-//    function handleAddField(values,setValues){
-//          setValues([...values ,{addField:""}])
-//    }
-//    function handleRemoveField(values , setValues ,index){
-//     const addField = [...values.addField];
-//            addField.splice(index,1);
-//            setValues(addField)
-//    }
-//    function onSubmit(field){
-//     console.log(field);
-//    }
+
   return (
     <div className='container'>
         <Formik 
@@ -68,7 +60,7 @@ export default function Dynamic2() {
                 <div>
                     <label htmlFor="">FirstName:</label>
                     <Field type="text" name="firstName"></Field>
-                    {errors.firstName  ? (
+                    {errors.firstName && touched.firstName ? (
              <div>{errors.firstName}</div>
            ) : null}
                 </div>
@@ -89,25 +81,7 @@ export default function Dynamic2() {
                 </div>
                 {/* <AddMoreField /> */}
 
-                {/* <FieldArray name='addField'>
-                    {()=>(values.addField.map((addFields,i)=>{
-                        return(
-                        <div key={i}>
-                            <div>
-                                <label htmlFor="">preferlocation</label>
-                                <Field name={`addfield.${i}.location`} type="text"
-                                 onChange={(e) =>  onChangeField(e,values,setValues)}/>
-                            </div>
-                            <div>
-                                <button type="submit" onClick={handleAddField}>Add</button>
-                            </div>
-                            <div>
-                                <button type="submit" onClick={handleRemoveField}>remove</button>
-                            </div>
-                        </div>
-                        )
-                    }))}
-                </FieldArray> */}
+               
                 <div className=''>
               <label>perferLocation:</label>
               <FieldArray name='addField'>
@@ -136,6 +110,9 @@ export default function Dynamic2() {
                   )
                 }}
               </FieldArray>
+              {errors.addField && touched.addField ? (
+             <div>{errors.addField}</div>
+           ) : null}
             </div>
             <div className=''>
               <label>Education:</label>
@@ -153,9 +130,10 @@ export default function Dynamic2() {
                           <label htmlFor="">Qualification</label>
                           {/* <Field name={`education[${index}].qualification`} /> */}
                           <Field as="select" name={`education[${index}].qualification`}>
-                            <option value="red">Red</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
+                            <option value="">--Select--</option>
+                            <option value="M.E">M.E</option>
+                            <option value="B.E">B.E</option>
+                            <option value="H.S.C">H.S.C</option>
                             </Field>
                           <label htmlFor="">Grade</label>
                           <Field name={`education[${index}].grade`} />
@@ -174,6 +152,9 @@ export default function Dynamic2() {
                   )
                 }}
               </FieldArray>
+              {errors.education && touched.education ? (
+             <div>{errors.education}</div>
+           ) : null}
             </div>
           
                 <button type="submit" onClick={() => setFormValues()}>Submit</button>
