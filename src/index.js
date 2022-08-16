@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
 // import './index.css';
 // import App from './App';
-import reportWebVitals from './reportWebVitals';
+
 // import Articles from "./xyz/com/Articles"
 // import Formik2 from "./form/Formik"
 // import Counter from './counter/Counter';
@@ -13,11 +14,14 @@ import reportWebVitals from './reportWebVitals';
 // import TableData from "./form/tableform"
 // import App2 from './form-crud/App';
 // import YupForm from './Yup-Form/YupForm';
-import FileUpload from './form/FileUpload';
+// import FileUpload from './form/FileUpload';
+// import DynamicForm from './form/DynamicForm';
+// import AddMoreField from './form/AddMoreField';
+import Dynamic2 from './form/Dynamic2';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+root.render(  
   <React.StrictMode>
     {/* <Articles/> */}
 {/* <Formik2 /> */}
@@ -28,8 +32,11 @@ root.render(
 {/* <ComponentPaginate /> */}
 {/* <TableData /> */}
 {/* <App2/> */}
-{/* <YupForm /> */}
-<FileUpload />
+{/* <FileUpload /> */}
+{/* <FileUpload /> */}
+{/* <DynamicForm /> */}
+{/* <AddMoreField /> */}
+<Dynamic2></Dynamic2>
   </React.StrictMode>
 );
 

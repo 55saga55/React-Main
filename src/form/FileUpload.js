@@ -1,9 +1,11 @@
 // import "./App.css";
+import { useEffect, useState } from "react";
+// "https://upload.imagekit.io/api/v1/files/upload"
+// import "./App.css";
 // import { useEffect, useState } from "react";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import { Formik, Field, Form, ErrorMessage, useField } from "formik";
 import axios from "axios";
-
 
 function FileUpload() {
   return (
@@ -11,22 +13,18 @@ function FileUpload() {
       initialValues={{
         profile: [],
       }}
-      validationSchema={Yup.object({
-        profile:Yup.array().min(1,"select at least 1 file")
-      })}
+      
       onSubmit={(values, props) => {
         let data = new FormData();
-        values.profile.forEach((photo, index) => {
-          data.append(`photo${index}`, values.profile[index]);
-        });
+        // values.profile.forEach((photo, index) => {
+        //   data.append(`photo$`, values.profile[index]);
+        // });
         axios
-          .post("https://upload.imagekit.io/api/v1/files/upload", data, 
-        //   {
-            // headers: {
-            //   "Content-Type": "multipart/form-data",
-            // },
-        //   }
-          )
+          .post("https://upload.imagekit.io/api/v1/files/upload", data, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
           .then((response) => {
             console.log(response);
           })
@@ -51,7 +49,7 @@ function FileUpload() {
                 multiple
               />
               <ErrorMessage name="profile"/>
-              <button type="submit" disabled={formik.isSubmitting}>
+              <button type="submit">
                 Submit
               </button>
             </Form>
@@ -59,7 +57,5 @@ function FileUpload() {
         );
       }}
     </Formik>
-  );
-}
-
+)}
 export default FileUpload;
