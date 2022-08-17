@@ -17,7 +17,8 @@ import reportWebVitals from './reportWebVitals';
 // import FileUpload from './form/FileUpload';
 // import DynamicForm from './form/DynamicForm';
 // import AddMoreField from './form/AddMoreField';
-import Dynamic2 from './form/Dynamic2';
+// import Dynamic2 from './form/Dynamic2';
+import EcommerceRegistration from "./Fileupload/FileUpload"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -36,7 +37,8 @@ root.render(
 {/* <FileUpload /> */}
 {/* <DynamicForm /> */}
 {/* <AddMoreField /> */}
-<Dynamic2></Dynamic2>
+{/* <Dynamic2></Dynamic2> */}
+<EcommerceRegistration />
   </React.StrictMode>
 );
 
