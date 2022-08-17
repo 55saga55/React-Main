@@ -19,11 +19,11 @@ export default function Dynamic2() {
       email: Yup.string().email('Invalid email').required('Required'),
       addField: Yup.array().of(Yup.string().required("required")),
 
-      // education: Yup.array(Yup.object(({
-      //     qualification: Yup.string().required('Required'),                              
-      //     grade: Yup.string().required('Required') 
-      //   })
-      // ))
+      education: Yup.array(Yup.object(({
+          qualification: Yup.string().required('Required'),                              
+          grade: Yup.string().required('Required') 
+        })
+      )).required()
    
     })
     const priamaryValues = 
@@ -35,7 +35,7 @@ export default function Dynamic2() {
             addField : [""],
             education: [{
               qualification:"",
-              grade:"",            }]
+              grade:"" }]
               
 
         }
@@ -129,20 +129,32 @@ export default function Dynamic2() {
                         <div key={index}>
                           <label htmlFor="">Qualification</label>
                           {/* <Field name={`education[${index}].qualification`} /> */}
-                          <Field as="select" name={`education[${index}].qualification`}>
+                          
+                          <Field as="select" name={`education.${index}.qualification`}>
                             <option value="">--Select--</option>
                             <option value="M.E">M.E</option>
                             <option value="B.E">B.E</option>
+                            <option value="B.C.A">B.C.A</option>
                             <option value="H.S.C">H.S.C</option>
                             </Field>
+                            {errors.education && touched.education ? (
+                        <div>{errors.education[index].qualification}</div>
+                      ) : null}
                           <label htmlFor="">Grade</label>
-                          <Field name={`education[${index}].grade`} />
+                          
+                          <Field name={`education.${index}.grade`} />
+
+                          {errors.education && touched.education ? (
+                        <div>{errors.education[index].grade}</div>
+                      ) : null}
 
                           {index > 0 && (
                             <button type='button' onClick={() => remove(index)}>
                               remove
                             </button>
                           )}
+
+
                         </div>
                       ))}
                       <button type='button' onClick={() => push('')}>
@@ -151,10 +163,10 @@ export default function Dynamic2() {
                     </div>
                   )
                 }}
+
+                
               </FieldArray>
-              {errors.education && touched.education ? (
-             <div>{errors.education}</div>
-           ) : null}
+             
             </div>
           
                 <button type="submit" onClick={() => setFormValues()}>Submit</button>
