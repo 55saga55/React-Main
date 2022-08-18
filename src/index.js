@@ -18,7 +18,9 @@ import reportWebVitals from './reportWebVitals';
 // import DynamicForm from './form/DynamicForm';
 // import AddMoreField from './form/AddMoreField';
 // import Dynamic2 from './form/Dynamic2';
-import EcommerceRegistration from "./Fileupload/FileUpload"
+// import EcommerceRegistration from "./Fileupload/FileUpload"
+import FormMyData from './Custom-form/FormMyData';
+import { formData } from './Custom-form/MyJsonData';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -38,11 +40,10 @@ root.render(
 {/* <DynamicForm /> */}
 {/* <AddMoreField /> */}
 {/* <Dynamic2></Dynamic2> */}
-<EcommerceRegistration />
+{/* <EcommerceRegistration /> */}
+<FormMyData formData={formData} /> 
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
