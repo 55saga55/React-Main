@@ -1,8 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
+// toast.configure();
 export default function EcommerceRegistration() {
+ 
+ 
 
     const [data,setData] = useState({
         username : "",
@@ -44,42 +48,21 @@ export default function EcommerceRegistration() {
         
 
         axios.post("http://localhost:8002/api/auth/register",formData).then(y=> {
-            
-        console.log(y);
+            console.log(y)
+        // console.log(y.data.response.data.message);
+        // console.log(y.data);
        
-        // toast(y.data.mesaage)
+        toast.success(y.data.message)
+        // toast.success("successfully signin")
         })
     }
-    const notify = () => toast('🦄 Wow so easy!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+
+    
 
   return (
     <div>
-          <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-/>
-{/* Same as */}
-<ToastContainer />
-
-      </div>
-
+          <ToastContainer />
+          {/* <button onClick={notify}>Notify!</button> */}
         <form  onSubmit={mySaveData}>
 
      <input type="text" name='username'  onChange={changSet}/>
@@ -98,7 +81,7 @@ pauseOnHover
 
     <input type="file" name="image" onChange={changSet}/>
 
-    <input type="submit"  value="save"/>
+    <input type="submit" onClick={mySaveData} value="save"/>
         </form>
 
     </div>
