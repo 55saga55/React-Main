@@ -65,7 +65,7 @@ export default function EcommerceRegistration() {
             <ToastContainer />
             {/* <button onClick={notify}>Notify!</button> */}
             <form onSubmit={mySaveData}>
-                <div className='form-group col-md-4'>
+                <div className='form-group col-md-4 '>
                     <label htmlFor="" className='my-2'>UserName:</label>
                     <input type="text" name='username' className='form-control' onChange={changSet} />
                 </div>

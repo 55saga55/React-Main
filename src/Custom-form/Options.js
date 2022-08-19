@@ -14,6 +14,7 @@ export default function Options({ field, fieldChanged, value }) {
               name={field._uid}
               value={option.value}
               checked={value === option.value}
+              className="mx-2"
               onChange={(e) => {
                 fieldChanged(field._uid, e.target.value);
               }}
