@@ -4,14 +4,14 @@ import FieldGroup from "./FieldGroup";
 import Options from "./Options";
 
 
-const fieldMeetsCondition = (values) => (field) => {
-  if (field.conditional && field.conditional.field) {
-    const segments = field.conditional.field.split("_");
-    const fieldId = segments[segments.length - 1];
-    return values[fieldId] === field.conditional.value;
-  }
-  return true;
-};
+// const fieldMeetsCondition = (values) => (field) => {
+//   if (field.conditional && field.conditional.field) {
+//     const segments = field.conditional.field.split("_");
+//     const fieldId = segments[segments.length - 1];
+//     return values[fieldId] === field.conditional.value;
+//   }
+//   return true;
+// };
 
 const FormCustom = ({ formData }) => {
   // state to track the current page ID of the form

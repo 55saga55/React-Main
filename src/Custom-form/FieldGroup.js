@@ -3,10 +3,12 @@ import Field from './Field';
 
 
 export default function FieldGroup({ field, fieldChanged, values }) {
+  
   return (
     <fieldset key={field._uid}>
     <h3>{field.label}</h3>
     {field.fields.map((field) => {
+      // console.log(field.label);
       return (
         <Field
           key={field._uid}

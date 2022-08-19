@@ -2,12 +2,13 @@ import React from 'react'
 
 export default function Field({ field, fieldChanged, type, value }) {
 
-    console.log(field,type,value);
+    // console.log(field,type,value);
   return (
    
 
 <div key={field._uid}>
       <label htmlFor={field._uid}>{field.label}</label>
+      {console.log(field)}
       <input
         type={type || field.component}
         id={field._uid}

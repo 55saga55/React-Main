@@ -17,10 +17,17 @@ export const formData = [
             },
             {
               component: "text",
+              label: "middle Name",
+              type: "text",
+              _uid: "6eff3638-80a7-4427-b07b-4c1be1c6b187"
+            },
+            {
+              component: "text",
               label: "Last Name",
               type: "text",
               _uid: "6eff3638-80a7-4427-b07b-4c1be1c6b186"
-            }
+            },
+           
           ]
         },
         {
@@ -51,12 +58,14 @@ export const formData = [
             {
               component: "option",
               label: "Option 1",
-              value: "one"
+              value: "one",
+              type:"radio"
             },
             {
               component: "option",
               label: "Option 2",
-              value: "two"
+              value: "two",
+              type:"radio"
             }
           ]
         },

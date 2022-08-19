@@ -88,7 +88,7 @@ export default function FormMyData({ formData }) {
   return (
     
 
-      <div >
+      <div className='container'>
 
 
         <form onSubmit={onSubmit}>
