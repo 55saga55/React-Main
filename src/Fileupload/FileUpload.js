@@ -33,7 +33,9 @@ export default function EcommerceRegistration() {
     const mySaveData = (e) => {
 
         e.preventDefault();
+
         var formData = new FormData();
+
         formData.append("username", data.username);
         formData.append("name", data.name);
         formData.append("email", data.email);
@@ -51,7 +53,7 @@ export default function EcommerceRegistration() {
 
             console.log(y)
             toast.success(y.data.message)
-            // toast.success("successfully signin")
+            toast.success("successfully signin")
         }).catch(y => {
 
            toast.error(y.response.data.message);
@@ -63,7 +65,7 @@ export default function EcommerceRegistration() {
     return (
         <div className='container my-3'>
             <ToastContainer />
-            {/* <button onClick={notify}>Notify!</button> */}
+          
             <form onSubmit={mySaveData}>
                 <div className='form-group col-md-4 '>
                     <label htmlFor="" className='my-2'>UserName:</label>

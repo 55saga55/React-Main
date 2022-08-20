@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Demo from './React-Bootstrap/Demo';
+// import Login from './Fileupload/Login';
+// import Demo from './React-Bootstrap/Demo';
 import reportWebVitals from './reportWebVitals';
 // import './index.css';
 // import App from './App';
@@ -22,7 +23,10 @@ import reportWebVitals from './reportWebVitals';
 // import EcommerceRegistration from "./Fileupload/FileUpload"
 // import FormMyData from './Custom-form/FormMyData';
 // import { formData } from './Custom-form/MyJsonData';
-import RouterMain from './router/RouterMain';
+// import RouterMain from './router/RouterMain';
+// import Login from './Fileupload/Login';
+import EcommerceRegistration from './Fileupload/FileUpload';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -42,10 +46,11 @@ root.render(
 {/* <DynamicForm /> */}
 {/* <AddMoreField /> */}
 {/* <Dynamic2></Dynamic2> */}
-{/* <EcommerceRegistration /> */}
+<EcommerceRegistration />
 {/* <FormMyData formData={formData} />  */}
 {/* <RouterMain /> */}
-<Demo />
+{/* <Demo /> */}
+{/* <Login /> */}
   </React.StrictMode>
 );
 
