@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Category from './Fileupload/Category';
+// import Category from './Fileupload/Category';
+import DisplayCategory from './Fileupload/DisplayCategory';
 // import User from './Fileupload/User';
 // import Login from './Fileupload/Login';
 // import Demo from './React-Bootstrap/Demo';
@@ -54,7 +55,8 @@ root.render(
 {/* <Demo /> */}
 {/* <Login /> */}
 {/* <User /> */}
-<Category/>
+{/* <Category/> */}
+<DisplayCategory />
   </React.StrictMode>
 );
 
