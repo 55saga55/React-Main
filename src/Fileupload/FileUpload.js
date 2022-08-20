@@ -49,11 +49,16 @@ export default function EcommerceRegistration() {
 
 
 
-        axios.post("http://localhost:8002/api/auth/register", formData).then(y => {
+        axios.post("http://localhost:8002/api/auth/register", formData,)
+        
+        
+        
+        .then(y => {
 
             console.log(y)
             toast.success(y.data.message)
             toast.success("successfully signin")
+           
         }).catch(y => {
 
            toast.error(y.response.data.message);

@@ -23,10 +23,21 @@ export default function Login() {
         formData.append("email", data.email);
         formData.append("password", data.password)
 
-        axios("http://localhost:8002/api/auth/login", formData)
+
+
+        axios.post("http://localhost:8002/api/auth/login", formData,{
+        
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": `Bearer` 
+            }})
             .then(y => {
                 console.log(y)
+                localStorage.setItem("data", JSON.stringify(y.data));
+            
             })
+        console.log(data);
     }
 
     return (

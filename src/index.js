@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Category from './Fileupload/Category';
+// import User from './Fileupload/User';
 // import Login from './Fileupload/Login';
 // import Demo from './React-Bootstrap/Demo';
 import reportWebVitals from './reportWebVitals';
@@ -25,7 +27,7 @@ import reportWebVitals from './reportWebVitals';
 // import { formData } from './Custom-form/MyJsonData';
 // import RouterMain from './router/RouterMain';
 // import Login from './Fileupload/Login';
-import EcommerceRegistration from './Fileupload/FileUpload';
+// import EcommerceRegistration from './Fileupload/FileUpload';
 
 
 
@@ -46,11 +48,13 @@ root.render(
 {/* <DynamicForm /> */}
 {/* <AddMoreField /> */}
 {/* <Dynamic2></Dynamic2> */}
-<EcommerceRegistration />
+{/* <EcommerceRegistration /> */}
 {/* <FormMyData formData={formData} />  */}
 {/* <RouterMain /> */}
 {/* <Demo /> */}
 {/* <Login /> */}
+{/* <User /> */}
+<Category/>
   </React.StrictMode>
 );
 
