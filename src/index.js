@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import DeleteUser from './Fileupload/DeleteUser';
 // import Category from './Fileupload/Category';
-import DisplayCategory from './Fileupload/DisplayCategory';
+// import DisplayCategory from './Fileupload/DisplayCategory';
 // import User from './Fileupload/User';
 // import Login from './Fileupload/Login';
 // import Demo from './React-Bootstrap/Demo';
@@ -56,7 +57,8 @@ root.render(
 {/* <Login /> */}
 {/* <User /> */}
 {/* <Category/> */}
-<DisplayCategory />
+{/* <DisplayCategory /> */}
+<DeleteUser />
   </React.StrictMode>
 );
 
