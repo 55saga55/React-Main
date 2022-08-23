@@ -91,6 +91,15 @@ export default function MyUseReducer() {
                     onChange={myChange} />
             </div>
             <div className='my-2'>
+
+
+                <label htmlFor="">contact Name</label>
+                <input type="tel" name='item1'
+
+                    value={input.item1}
+                    onChange={myChange} />
+            </div>
+            <div className='my-2'>
                 <label htmlFor="">fruits:</label>
                 <select
                     name='dropdown'
@@ -113,25 +122,36 @@ export default function MyUseReducer() {
                 <label for="javascript">JavaScript</label>
             </div>
             
-
-
-            <button onClick={mySave}>Save</button>
+             <button onClick={mySave}>Save</button>
 
             {
                 data.map((element, index) => {
 
-                    return (<div>{element.item}{" "}
-                        {element.dropdown}{" "}
-                        {element.fav_language}{" "}
-                        {element.vehicle}
-                        <button onClick={() => {
+                    return (<div>
+                        <table>
+                            <tr>
+                            <th>contact-no</th>
+                            <th>contact-name</th>
+                            <th>dropdown</th>
+                            <th>language</th>
+                            <th>delete</th>
+                            <th>update</th>
+                            </tr>
+                            <tr>
+                                <td> {element.item}</td>
+                                <td> {element.item1}</td>
+                                <td>{element.dropdown}</td>
+                                <td>{element.fav_language}</td>
+                                <td> <button onClick={() => {
                             myDelete(index)
-                        }}>Delete</button>
-
+                        }}>Delete</button></td>
+                        <td> 
                         <button onClick={() => {
                             edit(index)
-                        }}>Edit</button>
-                    </div>)
+                        }}>Edit</button></td>
+                            </tr>
+                        </table>
+                 </div>)
                 })
 
             }

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import DeleteUser from './Fileupload/DeleteUser';
 // import Category from './Fileupload/Category';
-import DisplayCategory from './Fileupload/DisplayCategory';
+// import DisplayCategory from './Fileupload/DisplayCategory';
 // import User from './Fileupload/User';
 // import Login from './Fileupload/Login';
 // import Demo from './React-Bootstrap/Demo';
 import reportWebVitals from './reportWebVitals';
-import MyUseReducer from './UseReducer/MyUseReducer';
+// import MyUseReducer from './UseReducer/MyUseReducer';
 // import './index.css';
 // import App from './App';
 
@@ -31,6 +31,8 @@ import MyUseReducer from './UseReducer/MyUseReducer';
 // import RouterMain from './router/RouterMain';
 // import Login from './Fileupload/Login';
 // import EcommerceRegistration from './Fileupload/FileUpload';
+// import EmployeeData from './example/Ex2/'
+import Ex2 from './example/Ex2'
 
 
 
@@ -60,7 +62,9 @@ root.render(
 {/* <Category/> */}
 {/* <DisplayCategory /> */}
 {/* <DeleteUser /> */}
-<MyUseReducer/>
+{/* <MyUseReducer/> */}
+{/* <EmployeeData /> */}
+<Ex2/>
   </React.StrictMode>
 );
 
