@@ -19,7 +19,7 @@ export default function Ex2() {
 
 
     const mydelete = ()=> {
-         return false;
+        //  return false;
     }
   return (
     <div>

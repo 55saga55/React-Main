@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom/client';
 // import Login from './Fileupload/Login';
 // import Demo from './React-Bootstrap/Demo';
 import reportWebVitals from './reportWebVitals';
+import UseRef1 from './UseRef/USeRef1';
 // import MyUseReducer from './UseReducer/MyUseReducer';
 // import './index.css';
 // import App from './App';
@@ -32,7 +33,8 @@ import reportWebVitals from './reportWebVitals';
 // import Login from './Fileupload/Login';
 // import EcommerceRegistration from './Fileupload/FileUpload';
 // import EmployeeData from './example/Ex2/'
-import Ex2 from './example/Ex2'
+// import Ex2 from './example/Ex2'
+// import useRef1 from "./"
 
 
 
@@ -64,7 +66,9 @@ root.render(
 {/* <DeleteUser /> */}
 {/* <MyUseReducer/> */}
 {/* <EmployeeData /> */}
-<Ex2/>
+{/* <Ex2/> */}
+{/* <useRef1 /> */}
+<UseRef1/>
   </React.StrictMode>
 );
 
