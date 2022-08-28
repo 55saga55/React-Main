@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Product from './Fileupload/Product';
+import ProductGet from './Fileupload/ProductGet';
+import reportWebVitals from './reportWebVitals';
 // import DeleteUser from './Fileupload/DeleteUser';
 // import Category from './Fileupload/Category';
 // import DisplayCategory from './Fileupload/DisplayCategory';
 // import User from './Fileupload/User';
 // import Login from './Fileupload/Login';
 // import Demo from './React-Bootstrap/Demo';
-import reportWebVitals from './reportWebVitals';
-import UseRef1 from './UseRef/USeRef1';
+
+// import UseRef1 from './UseRef/USeRef1';
 // import MyUseReducer from './UseReducer/MyUseReducer';
 // import './index.css';
 // import App from './App';
@@ -30,11 +33,12 @@ import UseRef1 from './UseRef/USeRef1';
 // import FormMyData from './Custom-form/FormMyData';
 // import { formData } from './Custom-form/MyJsonData';
 // import RouterMain from './router/RouterMain';
-// import Login from './Fileupload/Login';
+
 // import EcommerceRegistration from './Fileupload/FileUpload';
 // import EmployeeData from './example/Ex2/'
 // import Ex2 from './example/Ex2'
 // import useRef1 from "./"
+// import User from './Fileupload/User'
 
 
 
@@ -67,8 +71,10 @@ root.render(
 {/* <MyUseReducer/> */}
 {/* <EmployeeData /> */}
 {/* <Ex2/> */}
-{/* <useRef1 /> */}
-<UseRef1/>
+{/* <EcommerceRegistration /> */}
+{/* <UseRef1/> */}
+{/* <Product /> */}
+<ProductGet />
   </React.StrictMode>
 );
 
