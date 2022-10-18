@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .mp{
+        margin:10px;
+        } 
+     .buttonsty{
+        background-color: aquamarine;
+        padding: 5px 12px;
+     }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="">
+            <div class="mp">
+                <label for="">firstName:</label>
+        <input type="text" name="firstName" minlength="7" maxlength="15" required id="fn"> 
+            </div>
+        <div class="mp">
+            <label for="">lastName:</label>
+            <input type="text" name="lastName" minlength="7" maxlength="15" required id="ln">
+        </div>
+        <div class="mp">
+            
+        <label for="">email:</label>
+        <input type="email" name="email" id="" required minlength="3" maxlength="250" required id="email">
+        </div>
+        <div class="mp">
+            <label for="">password:</label>
+            <input type="text" name="password" maxlength="8" required id="password">
+        </div>
+        <div class="mp">
+            <label>confirm-Password</label>
+        <input type="text" name="confirmpassword" required id="confirm-password">
+        </div>
+          <div class="mp">
+            <button type="submit" class="buttonsty">submit</button>
+          </div>
+          
+        </form>
+    </div>
+</body>
+</html>

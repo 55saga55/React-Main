@@ -68,13 +68,14 @@ const price = ()=> {
 
  return (
     <>
-    <div className=''>
+    <div className='container'>
     <button type="button" className="btn btn-outline-primary mx-3 my-3" onClick={()=>{name()}}>{load ? <h5>Name &uarr;</h5>
 :<h5 >Name &darr;</h5>}</button>
     <button type="button" className="btn btn-outline-primary mx-3 my-3" onClick={()=>{price()}}>{load ? <h5 >Price &uarr;</h5>
 :<h5>Price &darr;</h5>}</button>
     </div>
-    <div className='d-flex row  justify-content-around' id="test" >
+    <div className='container'>
+    <div className='d-flex flex-wrap' id="test" >
       {
         value.map((element) => {
 
@@ -103,7 +104,7 @@ const price = ()=> {
       }
 
     </div>
- 
+    </div>
 </>
   )
 }

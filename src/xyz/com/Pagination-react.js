@@ -34,7 +34,7 @@ const Articles = () => {
         <div className="pagination">
           {Array(totalPages).fill().map((page, index) =>   {
             return (
-              <button data-testid="page-button" key={"page-button-" + index} onClick={handleClick}>{index + 1}</button>
+              <button data-testid="page-button" key={"page-button-" + index} onClick={handleClick}>{index+1}</button>
             )
           })
           }

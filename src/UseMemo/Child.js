@@ -5,4 +5,5 @@ import React from 'react'
     && prevMovie.releaseDate === nextMovie.releaseDate;
   
 }
-const MemoizedMovie2 = React.memo(Child);
+export const MemoizedMovie2 = React.memo(Child);
+//  MemoizedMovie2;

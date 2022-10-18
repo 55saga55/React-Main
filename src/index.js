@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Product from './Fileupload/Product';
-import ProductGet from './Fileupload/ProductGet';
 import reportWebVitals from './reportWebVitals';
+// import Product from './Fileupload/Product';
+// import ProductGet from './Fileupload/ProductGet';
+
 // import DeleteUser from './Fileupload/DeleteUser';
 // import Category from './Fileupload/Category';
 // import DisplayCategory from './Fileupload/DisplayCategory';
@@ -17,7 +18,7 @@ import reportWebVitals from './reportWebVitals';
 
 // import Articles from "./xyz/com/Articles"
 // import Formik2 from "./form/Formik"
-// import Counter from './counter/Counter';
+import Counter from './counter/Counter';
 // import Ex1 from './pagination/Ex1';
 // import P1 from './pagination/P1';
 // import ComponentPaginate from './pagination/ComponentPaginate';
@@ -32,14 +33,21 @@ import reportWebVitals from './reportWebVitals';
 // import EcommerceRegistration from "./Fileupload/FileUpload"
 // import FormMyData from './Custom-form/FormMyData';
 // import { formData } from './Custom-form/MyJsonData';
+// import YupForm from './Yup-Form/YupForm';
+// import Articles from './xyz/com/Pagination-react';
+// import Pagination from './remove-item/Pagination';
+// import Test from './remove-item/Test';
+// import Readmore from './remove-item/Readmore';
+import Product from './remove-item/product';
 // import RouterMain from './router/RouterMain';
+// import ReactMemo from './UseMemo/ReactMemo';
 
-// import EcommerceRegistration from './Fileupload/FileUpload';
+// import EcommerceRegistration from './Fileupload/Registration';
 // import EmployeeData from './example/Ex2/'
 // import Ex2 from './example/Ex2'
 // import useRef1 from "./"
 // import User from './Fileupload/User'
-
+import App from "./form-crud/App"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -74,7 +82,15 @@ root.render(
 {/* <EcommerceRegistration /> */}
 {/* <UseRef1/> */}
 {/* <Product /> */}
-<ProductGet />
+{/* <ProductGet /> */}
+{/* <ReactMemo/> */}
+{/* <YupForm/> */}
+{/* <Articles/> */}
+{/* <Pagination/> */}
+{/* <Test/> */}
+{/* <Readmore/> */}
+<App/>
+{/* <Product/> */}
   </React.StrictMode>
 );
 

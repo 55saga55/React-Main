@@ -14,7 +14,7 @@ export default function MyUseReducer() {
 
             case "Delete":
 
-                return state.filter((d, index) => {
+                return state.filter((data, index) => {
 
                     return index !== action.payload;
                 });
@@ -24,13 +24,13 @@ export default function MyUseReducer() {
 
 
 
-                return state.map((d, myindex) => {
+                return state.map((data, myindex) => {
 
                     if (myindex === action.index) {
                         return action.payload;
                     }
                     else {
-                        return d;
+                        return data;
                     }
 
                 });
@@ -62,7 +62,7 @@ export default function MyUseReducer() {
         }
     }
     const [data, setData] = useReducer(myReducer, myState);
-    const [input, setInput] = useState({});
+    const [input, setInput] = useState([]);
     const [index, setIndex] = useState(-1);
 
 
@@ -115,14 +115,14 @@ export default function MyUseReducer() {
             </div>
             <div className='my-2'>
                 <input type="radio" id="html" name="fav_language" value="html" onChange={myChange} />
-                <label for="html">HTML</label><br />
+                <label htmlFor="html">HTML</label><br />
                 <input type="radio" id="css" name="fav_language" value="css" onChange={myChange} />
-                <label for="css">CSS</label><br />
+                <label htmlFor="css">CSS</label><br />
                 <input type="radio" id="javascript" name="fav_language" value="javascript" onChange={myChange} />
-                <label for="javascript">JavaScript</label>
+                <label htmlFor="javascript">JavaScript</label>
             </div>
-            
-             <button onClick={mySave}>Save</button>
+
+            <button onClick={mySave}>Save</button>
 
             {
                 data.map((element, index) => {
@@ -130,12 +130,12 @@ export default function MyUseReducer() {
                     return (<div>
                         <table>
                             <tr>
-                            <th>contact-no</th>
-                            <th>contact-name</th>
-                            <th>dropdown</th>
-                            <th>language</th>
-                            <th>delete</th>
-                            <th>update</th>
+                                <th>contact-no</th>
+                                <th>contact-name</th>
+                                <th>dropdown</th>
+                                <th>language</th>
+                                <th>delete</th>
+                                <th>update</th>
                             </tr>
                             <tr>
                                 <td> {element.item}</td>
@@ -143,15 +143,15 @@ export default function MyUseReducer() {
                                 <td>{element.dropdown}</td>
                                 <td>{element.fav_language}</td>
                                 <td> <button onClick={() => {
-                            myDelete(index)
-                        }}>Delete</button></td>
-                        <td> 
-                        <button onClick={() => {
-                            edit(index)
-                        }}>Edit</button></td>
+                                    myDelete(index)
+                                }}>Delete</button></td>
+                                <td>
+                                    <button onClick={() => {
+                                        edit(index)
+                                    }}>Edit</button></td>
                             </tr>
                         </table>
-                 </div>)
+                    </div>)
                 })
 
             }
