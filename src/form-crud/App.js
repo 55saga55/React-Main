@@ -112,9 +112,9 @@ const App2 = () => {
   };
 
   return (
-    <div className="app-container" style={{maxwidth:"100%"}}>
-      <form onSubmit={handleEditFormSubmit} style={{maxwidth:"100%"}}>
-        <table style={{maxWidth:"100%",overflowX:"hidden"}}> 
+    <div className="app-container" style={{ maxwidth: "100%" }}>
+      <form onSubmit={handleEditFormSubmit} style={{ maxwidth: "100%" }}>
+        <table style={{ maxWidth: "100%", overflowX: "hidden" }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -147,8 +147,8 @@ const App2 = () => {
       </form>
 
       <h2>Add a Contact</h2>
-      <form onSubmit={handleAddFormSubmit} style={{display:"block"}}>
-        <div style={{margin:"10px"}}>
+      <form onSubmit={handleAddFormSubmit} style={{ display: "block" }}>
+        <div style={{ margin: "10px" }}>
           <label for="">Name:</label>
           <input
             type="text"
@@ -158,7 +158,7 @@ const App2 = () => {
             onChange={handleAddFormChange}
           />
         </div>
-        <div style={{margin:"10px"}}>
+        <div style={{ margin: "10px" }}>
           <label htmlFor="">Address:</label>
           <input
             type="text"
@@ -168,18 +168,17 @@ const App2 = () => {
             onChange={handleAddFormChange}
           />
         </div>
-        <div style={{margin:"10px"}}>
+        <div style={{ margin: "10px" }}>
           <label htmlFor="">Phone-No:</label>
           <input
             type="number"
-            
             name="phoneNumber"
             required="required"
             placeholder="Enter a phone number..."
             onChange={handleAddFormChange}
           />
         </div>
-        <div style={{margin:"10px"}}>
+        <div style={{ margin: "10px" }}>
           <label htmlFor="">Email:</label>
           <input
             type="email"
@@ -190,9 +189,13 @@ const App2 = () => {
           />
         </div>
 
-        <button type="submit" style={{width:"5rem",display:"inline-block"}}>Add</button>
-      </form> 
-     
+        <button
+          type="submit"
+          style={{ width: "5rem", display: "inline-block" }}
+        >
+          Add
+        </button>
+      </form>
     </div>
   );
 };

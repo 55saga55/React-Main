@@ -13,7 +13,6 @@ function FileUpload() {
       initialValues={{
         profile: [],
       }}
-      
       onSubmit={(values, props) => {
         let data = new FormData();
         // values.profile.forEach((photo, index) => {
@@ -43,19 +42,18 @@ function FileUpload() {
                 type="file"
                 onChange={(event) => {
                   const files = event.target.files;
-                  let myFiles =Array.from(files);
+                  let myFiles = Array.from(files);
                   formik.setFieldValue("profile", myFiles);
                 }}
                 multiple
               />
-              <ErrorMessage name="profile"/>
-              <button type="submit">
-                Submit
-              </button>
+              <ErrorMessage name="profile" />
+              <button type="submit">Submit</button>
             </Form>
           </>
         );
       }}
     </Formik>
-)}
+  );
+}
 export default FileUpload;

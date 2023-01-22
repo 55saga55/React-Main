@@ -3,7 +3,6 @@ import Field from "./Field";
 import FieldGroup from "./FieldGroup";
 import Options from "./Options";
 
-
 // const fieldMeetsCondition = (values) => (field) => {
 //   if (field.conditional && field.conditional.field) {
 //     const segments = field.conditional.field.split("_");
@@ -18,8 +17,7 @@ const FormCustom = ({ formData }) => {
   const [page, setPage] = useState(0);
 
   // state to track the current form data that will be displayed
-  const [currentPageData, setCurrentPageData] =
-   useState(formData[page]);
+  const [currentPageData, setCurrentPageData] = useState(formData[page]);
 
   // track the values of the form fields
   const [values, setValues] = useState({});
@@ -91,51 +89,50 @@ const FormCustom = ({ formData }) => {
 
   return (
     <>
-    <div>
-
-    {/* </div> */}
-    <form onSubmit={onSubmit}>
-      <h2>{currentPageData.label}</h2>
-      {currentPageData.fields
-        
-        .map((field) => {
-          switch (field.component) {
-            case "field_group":
-              return (
-                <FieldGroup
-                  key={field._uid}
-                  field={field}
-                  fieldChanged={fieldChanged}
-                  // should probably only slice out the required values, but ¯\_(ツ)_/¯
-                  values={values}
-                />
-              );
-            case "options":
-              return (
-                <Options
-                  key={field._uid}
-                  field={field}
-                  fieldChanged={fieldChanged}
-                  value={values[field._uid]}
-                />
-              );
-            default:
-              return (
-                <Field
-                  key={field._uid}
-                  field={field}
-                  fieldChanged={fieldChanged}
-                  value={values[field._uid]}
-                />
-              );
-          }
-        })}
-      {page > 0 && <button onClick={prevPage}>Back</button>}&nbsp;
-      {page < formData.length - 1 && <button onClick={nextPage}>Next</button>}
-      <hr />
-      <button onClick={() => console.log(values)}>Dump form data</button>
-    </form>
-    </div>
+      <div>
+        {/* </div> */}
+        <form onSubmit={onSubmit}>
+          <h2>{currentPageData.label}</h2>
+          {currentPageData.fields.map((field) => {
+            switch (field.component) {
+              case "field_group":
+                return (
+                  <FieldGroup
+                    key={field._uid}
+                    field={field}
+                    fieldChanged={fieldChanged}
+                    // should probably only slice out the required values, but ¯\_(ツ)_/¯
+                    values={values}
+                  />
+                );
+              case "options":
+                return (
+                  <Options
+                    key={field._uid}
+                    field={field}
+                    fieldChanged={fieldChanged}
+                    value={values[field._uid]}
+                  />
+                );
+              default:
+                return (
+                  <Field
+                    key={field._uid}
+                    field={field}
+                    fieldChanged={fieldChanged}
+                    value={values[field._uid]}
+                  />
+                );
+            }
+          })}
+          {page > 0 && <button onClick={prevPage}>Back</button>}&nbsp;
+          {page < formData.length - 1 && (
+            <button onClick={nextPage}>Next</button>
+          )}
+          <hr />
+          <button onClick={() => console.log(values)}>Dump form data</button>
+        </form>
+      </div>
     </>
   );
 };

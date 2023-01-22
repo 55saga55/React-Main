@@ -1,31 +1,46 @@
-import React, { useState } from 'react';
-import StudentForm from './Useformik';
+import React, { useState } from "react";
+import StudentForm from "./Useformik";
 // import jsonData from './data.json';
-import EditableRow from './EditableRow';
-  
+import EditableRow from "./EditableRow";
+
 function TableData() {
   const [studentData, setStudentData] = useState([]);
-  console.log(studentData)
-  const tableRows = studentData.map((info,item) => {
+  console.log(studentData);
+  const tableRows = studentData.map((info, item) => {
     return (
-        <>
-
-{
-          edit === info.id ?  <tbody> <EditableRow/></tbody> : 
-        
-        
-      <tr key = {item.id}>
-        <td>{info.id}</td>
-        <td>{info.name}</td>
-        <td>{info.name2 }</td>
-       <td><button className='btn btn-primary' onClick={() => handleDeleteClick(item)}>Delete</button></td>
-       <td><button className='btn btn-primary' onClick={() =>  handelEditClick()}>Edit</button></td>
-      </tr> 
-  }
+      <>
+        {edit === info.id ? (
+          <tbody>
+            {" "}
+            <EditableRow />
+          </tbody>
+        ) : (
+          <tr key={item.id}>
+            <td>{info.id}</td>
+            <td>{info.name}</td>
+            <td>{info.name2}</td>
+            <td>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleDeleteClick(item)}
+              >
+                Delete
+              </button>
+            </td>
+            <td>
+              <button
+                className="btn btn-primary"
+                onClick={() => handelEditClick()}
+              >
+                Edit
+              </button>
+            </td>
+          </tr>
+        )}
       </>
     );
   });
-  
+
   const addRows = (data) => {
     const totalStudents = studentData.length;
     data.id = totalStudents + 1;
@@ -34,19 +49,15 @@ function TableData() {
     setStudentData(updatedStudentData);
   };
   const handleDeleteClick = (id) => {
-
     const newData = [...studentData];
 
-    newData.splice(id,1);
+    newData.splice(id, 1);
 
     setStudentData([...newData]);
   };
 
   const [edit, setedit] = useState(1);
-  const handelEditClick = ()=>{
-
-
-  }
+  const handelEditClick = () => {};
 
   return (
     <div>
@@ -60,12 +71,15 @@ function TableData() {
             <th>Edit item</th>
           </tr>
         </thead>
-       <tbody> {tableRows}</tbody>
-       <tbody> <EditableRow/></tbody>
+        <tbody> {tableRows}</tbody>
+        <tbody>
+          {" "}
+          <EditableRow />
+        </tbody>
       </table>
-      <StudentForm func={addRows}/>
+      <StudentForm func={addRows} />
     </div>
   );
 }
-  
+
 export default TableData;

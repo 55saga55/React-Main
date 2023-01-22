@@ -1,6 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Context from "./practice/Hook";
+// import Hook from './practice/Hook';
+import reportWebVitals from "./reportWebVitals";
+// import Context from './practice/Hook';
 // import Product from './Fileupload/Product';
 // import ProductGet from './Fileupload/ProductGet';
 
@@ -18,7 +21,7 @@ import reportWebVitals from './reportWebVitals';
 
 // import Articles from "./xyz/com/Articles"
 // import Formik2 from "./form/Formik"
-import Counter from './counter/Counter';
+// import Counter from './counter/Counter';
 // import Ex1 from './pagination/Ex1';
 // import P1 from './pagination/P1';
 // import ComponentPaginate from './pagination/ComponentPaginate';
@@ -38,7 +41,7 @@ import Counter from './counter/Counter';
 // import Pagination from './remove-item/Pagination';
 // import Test from './remove-item/Test';
 // import Readmore from './remove-item/Readmore';
-import Product from './remove-item/product';
+// import Product from './remove-item/product';
 // import RouterMain from './router/RouterMain';
 // import ReactMemo from './UseMemo/ReactMemo';
 
@@ -47,52 +50,61 @@ import Product from './remove-item/product';
 // import Ex2 from './example/Ex2'
 // import useRef1 from "./"
 // import User from './Fileupload/User'
-import App from "./form-crud/App"
+// import App from "./form-crud/App"
+import CalculateFactorial from "./practice/Hook";
+import FormExe from "./form-exe/FormExe";
+import { Formik } from "formik";
+import Formik2 from "./form/Formik";
+import Login from "./Fileupload/Login";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(  
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     {/* <Articles/> */}
-{/* <Formik2 /> */}
-{/* <Counter /> */}
-{/* <Ex1 /> */}
-{/* <P1/> */}
-{/* <Remove_item></Remove_item> */}
-{/* <ComponentPaginate /> */}
-{/* <TableData /> */}
-{/* <App2/> */}
-{/* <FileUpload /> */}
-{/* <FileUpload /> */}
-{/* <DynamicForm /> */}
-{/* <AddMoreField /> */}
-{/* <Dynamic2></Dynamic2> */}
-{/* <EcommerceRegistration /> */}
-{/* <FormMyData formData={formData} />  */}
-{/* <RouterMain /> */}
-{/* <Demo /> */}
-{/* <Login /> */}
-{/* <User /> */}
-{/* <Category/> */}
-{/* <DisplayCategory /> */}
-{/* <DeleteUser /> */}
-{/* <MyUseReducer/> */}
-{/* <EmployeeData /> */}
-{/* <Ex2/> */}
-{/* <EcommerceRegistration /> */}
-{/* <UseRef1/> */}
-{/* <Product /> */}
-{/* <ProductGet /> */}
-{/* <ReactMemo/> */}
-{/* <YupForm/> */}
-{/* <Articles/> */}
-{/* <Pagination/> */}
-{/* <Test/> */}
-{/* <Readmore/> */}
-<App/>
-{/* <Product/> */}
+    {/* <Formik2 /> */}
+    {/* <Counter /> */}
+    {/* <Ex1 /> */}
+    {/* <P1/> */}
+    {/* <Remove_item></Remove_item> */}
+    {/* <ComponentPaginate /> */}
+    {/* <TableData /> */}
+    {/* <App2/> */}
+    {/* <FileUpload /> */}
+    {/* <FileUpload /> */}
+    {/* <DynamicForm /> */}
+    {/* <AddMoreField /> */}
+    {/* <Dynamic2></Dynamic2> */}
+    {/* <EcommerceRegistration /> */}
+    {/* <FormMyData formData={formData} />  */}
+    {/* <RouterMain /> */}
+    {/* <Demo /> */}
+    {/* <Login /> */}
+    {/* <User /> */}
+    {/* <Category/> */}
+    {/* <DisplayCategory /> */}
+    {/* <DeleteUser /> */}
+    {/* <MyUseReducer/> */}
+    {/* <EmployeeData /> */}
+    {/* <Ex2/> */}
+    {/* <EcommerceRegistration /> */}
+    {/* <UseRef1/> */}
+    {/* <Product /> */}
+    {/* <ProductGet /> */}
+    {/* <ReactMemo/> */}
+    {/* <YupForm/> */}
+    {/* <Articles/> */}
+    {/* <Pagination/> */}
+    {/* <Test/> */}
+    {/* <Readmore/> */}
+    {/* <App/> */}
+    {/* <Product/> */}
+    {/* <Hook/> */}
+    {/* <Context/> */}
+    {/* <FormExe/> */}
+    {/* <Formik2/> */}
+    {/* <CalculateFactorial/> */}
+    <Login />
   </React.StrictMode>
 );
-
 
 reportWebVitals();

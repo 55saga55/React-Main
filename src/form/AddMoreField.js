@@ -21,9 +21,6 @@ function AddMoreField() {
     setServiceList([...serviceList, { service: "" }]);
   };
 
-
-  
-
   return (
     <form className="App" autoComplete="off">
       <div className="form-field">

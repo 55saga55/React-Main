@@ -4,7 +4,6 @@ export default function FormData() {
   // const hobies = ["re"]
 
   const [data, setData] = useState({
-
     title: "",
     firstName: "",
     lastName: "",
@@ -16,40 +15,23 @@ export default function FormData() {
   });
 
   const myData = (e) => {
-    
     const { value, name, checked } = e.target;
     const { hobbies } = data;
 
     if (name === "hobbies") {
-
       if (checked) {
-
         // hobbies.push(value);
 
         setData({ ...data, hobbies: [...hobbies, value] });
-
-
-      }
-      else {
-
+      } else {
         setData({ ...data, hobbies: hobbies.filter((e) => e !== value) });
-
       }
+    } else if (name === "acceptTerms") {
+      setData({ ...data, [name]: checked });
+    } else {
+      setData({ ...data, [name]: value });
     }
-      else if (name === "acceptTerms") {
-
-        setData({ ...data, [name]: checked });
-
-      }
-    
-    else {
-
-          setData({ ...data, [name]: value });
-
-    }
-
-  }
-
+  };
 
   const mySubmit = (e) => {
     console.log(e);

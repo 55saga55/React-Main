@@ -8,33 +8,31 @@ import Pagination from "react-js-pagination";
 export default class ComponentPaginate extends Component {
   state = {
     data: [],
-    activePage: 1
+    activePage: 1,
   };
 
   componentDidMount() {
     axios
       .get("https://jsonmock.hackerrank.com/api/articles?page=1")
-      .then(res => {
+      .then((res) => {
         this.setState({
-          data: res.data.data
+          data: res.data.data,
         });
       });
   }
-  handlePageChange = pageNumber => {
+  handlePageChange = (pageNumber) => {
     console.log(`active page is ${pageNumber}`);
     axios
-      .get(
-        `https://jsonmock.hackerrank.com/api/articles?page=${pageNumber}`
-      )
-      .then(res => {
+      .get(`https://jsonmock.hackerrank.com/api/articles?page=${pageNumber}`)
+      .then((res) => {
         this.setState({
-          data: res.data.data
+          data: res.data.data,
         });
       });
     this.setState({ activePage: pageNumber });
   };
   render() {
-    const allData = this.state.data.map(item => {
+    const allData = this.state.data.map((item) => {
       return <li key={item.id}>{item.title}</li>;
     });
     return (

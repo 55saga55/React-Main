@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Toast from 'react-bootstrap/Toast';
-import Container from 'react-bootstrap/Container';
+import Toast from "react-bootstrap/Toast";
+import Container from "react-bootstrap/Container";
 
 // import './App.css';
 
@@ -19,15 +19,15 @@ const ExampleToast = ({ children }) => {
 };
 
 const Demo = () => (
-//   <Container className="p-3">
-     <Container className="p-5 mb-4 bg-light rounded-3">
-      <h1 className="header">Welcome To React-Bootstrap</h1>
-      <ExampleToast>
-      <h4> We now have Toasts</h4> 
-        <span role="img" aria-label="tada">
-          🎉
-        </span>
-      </ExampleToast>
+  //   <Container className="p-3">
+  <Container className="p-5 mb-4 bg-light rounded-3">
+    <h1 className="header">Welcome To React-Bootstrap</h1>
+    <ExampleToast>
+      <h4> We now have Toasts</h4>
+      <span role="img" aria-label="tada">
+        🎉
+      </span>
+    </ExampleToast>
     {/* </Container> */}
   </Container>
 );
